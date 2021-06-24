@@ -1,6 +1,7 @@
 import { Options } from '@mikro-orm/core';
 import { CONFIG } from './constants';
 import { Post } from './entities/Post';
+import { User } from './entities/User';
 import path from 'path';
 
 const config: Options = {
@@ -15,7 +16,7 @@ const config: Options = {
     safe: false, // allow to disable table and column dropping
     emit: 'ts', // migration generation mode
   },
-  entities: [Post],
+  entities: [Post, User],
   dbName: 'reddit',
   password: CONFIG.PASSWORD,
   type: 'postgresql',

@@ -1,5 +1,5 @@
 import { Options } from '@mikro-orm/core';
-import { __prod__ } from './constants';
+import { CONFIG } from './constants';
 import { Post } from './entities/Post';
 import path from 'path';
 
@@ -17,8 +17,9 @@ const config: Options = {
   },
   entities: [Post],
   dbName: 'reddit',
+  password: CONFIG.PASSWORD,
   type: 'postgresql',
-  debug: !__prod__,
+  debug: !CONFIG.PROD,
 };
 
 export default config;

@@ -1,1 +1,4 @@
-export const __prod__ = process.env.NODE_ENV === 'production';
+export const CONFIG = {
+    PROD: process.env.NODE_ENV === 'production',
+    PASSWORD: 'omekrit123'
+};
